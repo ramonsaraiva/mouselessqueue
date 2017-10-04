@@ -1,0 +1,8 @@
+*.py[cod]
+*.swp
+*.spec
+dist
+build
+__pycache__
+.idea
+resources
