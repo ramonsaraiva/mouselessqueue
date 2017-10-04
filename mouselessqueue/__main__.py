@@ -18,17 +18,18 @@ def run():
 
 
 def in_lobby_event_callback(location):
-    output_message('in match! press any key to restart')
+    output_message('- in match! press any key to restart')
+    input()
     accept_match()
 
 
 def accept_match_event_callback(location):
-    output_message('accepting match..')
+    output_message('- accepting match..')
     mouse.move((location[0] + 80, location[1] + 24))
     time.sleep(0.2)
     mouse.click()
 
-    output_message('accepted match, waiting for others..')
+    output_message('- match accepted, waiting for others..')
     in_lobby_template = Template('edit-masteries.jpg', 0.53)
     in_lobby_event = Event(
         in_lobby_template, in_lobby_event_callback,
@@ -37,7 +38,7 @@ def accept_match_event_callback(location):
 
 
 def accept_match():
-    output_message('currently in queue..')
+    output_message('- join the queue and go relax.. we got this')
     accept_match_template = Template('accept-match.jpg', 0.5)
     accept_match_event = Event(
         accept_match_template, accept_match_event_callback)
